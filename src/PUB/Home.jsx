@@ -6,6 +6,31 @@ function Home() {
     const tabSort = (idx) =>{
         setTabValue(idx);
     }
+
+    let scrollTop;
+    window.addEventListener(
+        "scroll",
+        function () {
+            scrollTop = window.scrollY;
+            if (scrollTop === 0) {
+                document.querySelector("#wrap").classList.add("transTop");
+                document.querySelector("#wrap").classList.remove("blackTop");
+                document.querySelector("#wrap").classList.remove("whiteTop");
+            }
+            else if (scrollTop > 6 && scrollTop < 900) {
+                document.querySelector("#wrap").classList.add("blackTop");
+                document.querySelector("#wrap").classList.remove("whiteTop");
+                document.querySelector("#wrap").classList.remove("transTop");
+            }
+            else {
+                document.querySelector("#wrap").classList.add("whiteTop");
+                document.querySelector("#wrap").classList.remove("blackTop");
+                document.querySelector("#wrap").classList.remove("transTop");
+            }
+        },
+        { passive: true }
+    );
+
     return (
         <div id="introduction">
             <div className="introduction-main">
@@ -27,7 +52,9 @@ function Home() {
                     <div className="indicate"></div>
                 </div>
             </div>
+            <div style={{height: "3000px"}}></div>
         </div>
+
     );
 }
 

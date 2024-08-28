@@ -9,7 +9,7 @@ function Layout({ children }) {
     const location = useLocation().pathname;
 
     return (
-        <div id="wrap" className={headerWhite.includes(location) ? "" : "home"}>
+        <div id="wrap" className={headerWhite.includes(location) ? "sub" : "home transTop"}>
             <Header/>
             <div id="contentWrap">
                 {children}
