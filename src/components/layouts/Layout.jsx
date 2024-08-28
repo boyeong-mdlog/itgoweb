@@ -1,10 +1,15 @@
 import React from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
+import { useLocation } from "react-router-dom";
+
+const headerWhite = ["/pub/Notice", "/pub/Question"];
 
 function Layout({ children }) {
+    const location = useLocation().pathname;
+
     return (
-        <div id="wrap">
+        <div id="wrap" className={headerWhite.includes(location) ? "" : "home"}>
             <Header/>
             <div id="contentWrap">
                 {children}

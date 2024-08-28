@@ -80,6 +80,7 @@ input::placeholder, textarea::placeholder {
   color: #999;
 }
 
+/* Layout */
 header {
   width: 100%;
   position: fixed;
@@ -127,7 +128,7 @@ header .headerWrap .headerInner nav .responseBar span {
   display: block;
   width: 2rem;
   height: 0.2rem;
-  background-color: #fff;
+  background-color: #101010;
   margin: 0.4rem 0;
 }
 header .headerWrap .headerInner nav ul {
@@ -201,6 +202,89 @@ header .headerWrap .headerInner .responseBg {
   z-index: 110;
   display: none;
 }
+header .headerWrap .headerInner .goTo {
+  height: 3.6rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #101010;
+  border-radius: 3rem;
+  border: 1px solid rgba(16, 16, 16, 0.6);
+}
+
+/* Footer */
+footer {
+  background-color: #183256;
+  padding: 6.5rem;
+}
+footer .footer-logo {
+  text-indent: -999em;
+  background: url("../images/logo_white.svg") no-repeat 50% 50%;
+  background-size: 100% auto;
+  width: 10rem;
+  height: 4rem;
+  margin-bottom: 2.4rem;
+}
+footer .footer-address {
+  display: flex;
+  align-items: center;
+  gap: 0 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+footer .footer-address span {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+footer .footer-term {
+  margin-bottom: 1rem;
+}
+footer .footer-term ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer .footer-term ul li {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0 0.8rem;
+  margin-top: 1.95rem;
+}
+footer .footer-term ul li:first-child {
+  padding-left: 0;
+}
+footer .footer-term ul li:last-child {
+  border-right: none;
+}
+footer .footer-copyright {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Layout */
+#wrap.home header {
+  box-shadow: none;
+}
+#wrap.home header .headerWrap .headerInner h1 {
+  background-image: url("../images/logo_white.svg");
+}
+#wrap.home header .headerWrap .headerInner nav .responseBar span {
+  background-color: #fff;
+}
+#wrap.home header .headerWrap .headerInner nav ul li > a {
+  color: #fff;
+}
+#wrap.home header .headerWrap .headerInner nav ul li p a {
+  color: #fff;
+}
+#wrap.home header .headerWrap .headerInner nav ul li:hover em {
+  background-color: #fff;
+}
 
 #introduction .introduction-main {
   width: 100%;
@@ -214,6 +298,11 @@ header .headerWrap .headerInner .responseBg {
   width: 100%;
   height: 90rem;
 }
+#introduction .introduction-main .introduction-media video {
+  width: 100%;
+  height: 90rem;
+  object-fit: cover;
+}
 #introduction .introduction-main .introduction-main-text {
   text-align: center;
   width: 100%;
@@ -223,6 +312,40 @@ header .headerWrap .headerInner .responseBg {
   position: absolute;
   flex-direction: column;
 }
+#introduction .introduction-tab .tab-title {
+  width: 100%;
+  background-color: #f3f5f6;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#introduction .introduction-tab .tab-title button {
+  font-size: 2rem;
+  font-weight: 600;
+  width: calc(100% / 3);
+  height: 7rem;
+  cursor: pointer;
+}
+#introduction .introduction-tab .tab-title .indicate {
+  position: absolute;
+  width: calc(100% / 3);
+  height: 0.8rem;
+  background-color: #e5318e;
+  bottom: 0;
+  left: 0;
+  transition: left 0.5s;
+}
+#introduction .introduction-tab .tab-title.setTab_1 .indicate {
+  left: 0;
+}
+#introduction .introduction-tab .tab-title.setTab_2 .indicate {
+  left: calc((100% / 3) * 1);
+}
+#introduction .introduction-tab .tab-title.setTab_3 .indicate {
+  left: calc((100% / 3) * 2);
+}
 
 @media screen and (max-width: 1440px) {
   header .headerWrap {
@@ -230,6 +353,7 @@ header .headerWrap .headerInner .responseBg {
   }
 }
 @media screen and (max-width: 1024px) {
+  /* Layout */
   header .headerWrap {
     height: 6rem;
     padding: 0;
@@ -303,6 +427,41 @@ header .headerWrap .headerInner .responseBg {
   }
   header .headerWrap .headerInner.open .responseBg {
     display: block;
+  }
+
+  footer {
+    padding: 9.8rem 5.3rem 5.3rem;
+  }
+  footer .footer-term ul {
+    width: 92%;
+  }
+
+  .introduction-tab .tab-title {
+    height: 6rem;
+  }
+  .introduction-tab .tab-title button {
+    height: 6rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 6.8rem 3rem;
+  }
+  footer .footer-logo {
+    margin-bottom: 1.4rem;
+  }
+  footer .footer-address {
+    margin-bottom: 2.3rem;
+  }
+  footer .footer-term {
+    margin-bottom: 1.2rem;
+  }
+  footer .footer-term ul li {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+  footer .footer-copyright {
+    font-size: 1.4rem;
   }
 }
 @keyframes width-right {

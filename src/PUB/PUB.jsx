@@ -1,19 +1,25 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
+import Home from "./Home";
+import Notice from "./Notice";
+import Question from "./Question";
+
 const PUB = () => {
-    const PageID = useParams();
-    const loadPage = (PageID) => {
-        switch (PageID) {
-            case "" :
-                return <></>;
+    const { pageID } = useParams();
+    const loadPage = (pageID) => {
+        switch (pageID) {
+            case "Notice" :
+                return <Notice />;
+            case "Question" :
+                return <Question />;
             default:
-                return <></>;
+                return <Home />;
         }
     };
     return (
         <>
-            {loadPage(PageID)}
+            {loadPage(pageID)}
         </>
     );
 }

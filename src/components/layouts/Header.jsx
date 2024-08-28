@@ -48,21 +48,21 @@ function Header() {
                                     </p>
                                 </li>
                                 <li onMouseEnter={()=>handleHeaderOn(2)} onMouseLeave={handleHeaderOut}>
-                                    <Link to="#">공지사항</Link>
+                                    <Link to="/pub/Notice">공지사항</Link>
                                     <em></em>
                                     <p>
-                                        <Link to="#">공지사항</Link>
-                                        <Link to="#">이벤트</Link>
+                                        <Link to="/pub/Notice">공지사항</Link>
+                                        <Link to="/pub/Notice">이벤트</Link>
                                     </p>
                                 </li>
                                 <li onMouseEnter={()=>handleHeaderOn(3)} onMouseLeave={handleHeaderOut}>
-                                    <Link to="#">자주묻는 질문</Link>
+                                    <Link to="/pub/Question">자주묻는 질문</Link>
                                     <em></em>
                                     <p>
-                                        <Link to="#">전체</Link>
-                                        <Link to="#">차주</Link>
-                                        <Link to="#">주선사</Link>
-                                        <Link to="#">화주</Link>
+                                        <Link to="/pub/Question">전체</Link>
+                                        <Link to="/pub/Question">차주</Link>
+                                        <Link to="/pub/Question">주선사</Link>
+                                        <Link to="/pub/Question">화주</Link>
                                     </p>
                                 </li>
                             </ul>

@@ -6,6 +6,7 @@
     }
 }
 @media screen and (max-width: 1024px) {
+    /* Layout */
     header {
         .headerWrap {
             height: 6rem;padding: 0;
@@ -51,10 +52,35 @@
             }
         }
     }
+    footer {
+        padding: 9.8rem 5.3rem 5.3rem;
+        .footer-term {
+            ul {width: 92%;}
+        }
+    }
+    .introduction-tab {
+        .tab-title {
+            height: 6rem;
+            button {height: 6rem;}
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
-
+    footer {
+        padding: 6.8rem 3rem;
+        .footer-logo {margin-bottom: 1.4rem;}
+        .footer-address {margin-bottom: 2.3rem;}
+        .footer-term {
+            margin-bottom: 1.2rem;
+            ul {
+                li {
+                    font-size: 1.4rem;margin-top: 1rem;
+                }
+            }
+        }
+        .footer-copyright {font-size: 1.4rem}
+    }
 }
 
 @keyframes width-right {
