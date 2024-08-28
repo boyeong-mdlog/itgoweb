@@ -57,6 +57,11 @@ input, button, button:focus, input:focus {
   outline: none;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 table, td, th {
   border-collapse: collapse;
   border-spacing: 0;
@@ -82,7 +87,7 @@ header {
   left: 0;
   z-index: 100;
   transition: height 1s;
-  background-color: #f5f5f5;
+  box-shadow: 0 0 20px -10px rgba(16, 16, 16, 0.2);
 }
 header .headerWrap {
   width: 100%;
@@ -91,20 +96,39 @@ header .headerWrap {
   margin: auto;
   padding: 3rem 2rem 0 2rem;
   transition: all 0.3s;
+  box-sizing: border-box;
+}
+header .headerWrap.on {
+  height: 14rem;
 }
 header .headerWrap .headerInner {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 header .headerWrap .headerInner h1 {
   text-indent: -999em;
-  background-size: auto;
   width: 11.2rem;
   height: 4.5rem;
-  background: url("../images/logo.svg") no-repeat 0 0;
+  background: url("../images/logo.svg") no-repeat 50% 50%;
   cursor: pointer;
+  background-size: 100% auto;
+}
+header .headerWrap .headerInner nav {
+  position: relative;
+}
+header .headerWrap .headerInner nav .responseBar {
+  display: none;
+  cursor: pointer;
+}
+header .headerWrap .headerInner nav .responseBar span {
+  display: block;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: #fff;
+  margin: 0.4rem 0;
 }
 header .headerWrap .headerInner nav ul {
   display: flex;
@@ -113,18 +137,69 @@ header .headerWrap .headerInner nav ul {
 header .headerWrap .headerInner nav ul li {
   margin: 0 2.5rem;
   position: relative;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 header .headerWrap .headerInner nav ul li > a {
   font-size: 2.2rem;
   font-weight: 700;
   height: 3.6rem;
 }
+header .headerWrap .headerInner nav ul li em {
+  width: 0;
+  height: 0.5rem;
+  background-color: #fff;
+  top: 3.5rem;
+  transition: width 0.3s;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 header .headerWrap .headerInner nav ul li p {
   position: absolute;
   left: 0;
   top: 3.6rem;
-  display: flex;
+  display: none;
   align-items: center;
+}
+header .headerWrap .headerInner nav ul li p a {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 2rem 2rem 2rem 0;
+  white-space: nowrap;
+}
+header .headerWrap .headerInner nav ul li:hover em {
+  width: 100%;
+  background-color: #101010;
+}
+header .headerWrap .headerInner nav ul li:hover p {
+  display: flex;
+}
+header .headerWrap .headerInner nav ul li.close {
+  padding: 1.3rem 2rem;
+  display: none;
+  justify-content: flex-end;
+  border-bottom: thin solid rgba(217, 217, 217, 0.1);
+}
+header .headerWrap .headerInner nav ul li.close button {
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  background: url("../images/close.svg") no-repeat 50% 50%;
+}
+header .headerWrap .headerInner .responseBg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  z-index: 110;
+  display: none;
 }
 
 #introduction .introduction-main {
@@ -152,5 +227,92 @@ header .headerWrap .headerInner nav ul li p {
 @media screen and (max-width: 1440px) {
   header .headerWrap {
     max-width: 1072px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header .headerWrap {
+    height: 6rem;
+    padding: 0;
+  }
+  header .headerWrap .headerInner {
+    height: 6rem;
+    padding: 0 2rem;
+  }
+  header .headerWrap .headerInner h1 {
+    width: 6.2rem;
+    height: 2.5rem;
+  }
+  header .headerWrap .headerInner nav .responseBar {
+    display: block;
+  }
+  header .headerWrap .headerInner nav ul {
+    position: fixed;
+    width: 0;
+    height: 100vh;
+    background-color: #183256;
+    right: 0;
+    top: 0;
+    z-index: 120;
+    display: none;
+  }
+  header .headerWrap .headerInner nav ul li {
+    margin: 0;
+    display: block;
+    height: auto;
+  }
+  header .headerWrap .headerInner nav ul li:not(.close) > a {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 1.5rem 1.9rem;
+    display: block;
+    height: auto;
+  }
+  header .headerWrap .headerInner nav ul li:not(.close) p {
+    background-color: #0f2545;
+    width: 100%;
+    position: relative;
+    top: inherit;
+  }
+  header .headerWrap .headerInner nav ul li:not(.close) p span {
+    display: none;
+  }
+  header .headerWrap .headerInner nav ul li:not(.close) p a {
+    padding: 1rem 1.9rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 2rem;
+    display: block;
+  }
+  header .headerWrap .headerInner nav ul li:not(.close) em {
+    display: none;
+  }
+  header .headerWrap .headerInner nav ul li.close {
+    display: flex;
+  }
+  header .headerWrap .headerInner nav ul li:hover p {
+    display: block;
+  }
+  header .headerWrap .headerInner button.goTo {
+    display: none;
+  }
+  header .headerWrap .headerInner.open nav ul {
+    animation: width-right 0.15s linear forwards;
+    display: block;
+  }
+  header .headerWrap .headerInner.open .responseBg {
+    display: block;
+  }
+}
+@keyframes width-right {
+  0% {
+    width: 0;
+    right: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 28rem;
+    opacity: 1;
   }
 }
