@@ -64,6 +64,52 @@
             button {height: 6rem;}
         }
     }
+    #wrap.sub {
+        padding-top: 9.8rem;
+        #contentWrap {
+            min-height: 80vh;
+        }
+    }
+    .pageTitle {
+        margin: 0 2.3rem 1rem;
+        strong {
+            height: 4.5rem;padding-left: 5.7rem;font-size: 2rem;
+        }
+    }
+    .itgoWebTab {
+        height: 5rem;
+        button {font-size: 1.6rem;}
+        .indicate {height: 0.3rem;}
+    }
+    .noticeList {
+        ul {
+            li {
+                .info {
+                    .list {
+                        padding: 1.4rem 0 1.4rem 2rem;height: auto;flex-wrap: wrap;
+                        .type {
+                            font-size: 1rem;padding-left: 0;order: 2;
+                            span {
+                                width: 6rem;padding: 0.3rem;;
+                            }
+                        }
+                        .title {font-size: 1.6rem;margin: 0 0 0.8rem 0;width: 100%;order: 1;}
+                        .date {flex-grow: 1;margin-left: 0.8rem;order: 3;text-align: left;font-size: 1.6rem}
+                    }
+                    .btn {
+                        display: flex;align-items: center;justify-content: center;width: 70px;
+                        button {
+                            width: 3rem;height: 3rem;background: url("../images/ic_down.svg") no-repeat 50% 50%;background-size: 3rem auto;
+                        }
+                    }
+                }
+                .content {
+                    font-size: 1.4rem;min-height: 12.1rem;padding: 3rem;
+                }
+
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {

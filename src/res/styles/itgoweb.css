@@ -211,6 +211,7 @@ header .headerWrap .headerInner .goTo {
   border-radius: 3rem;
   border: 1px solid rgba(16, 16, 16, 0.6);
   padding: 0.6rem 1.7rem;
+  box-sizing: border-box;
 }
 
 /* Footer */
@@ -284,12 +285,97 @@ footer .footer-copyright {
 #wrap.home.blackTop header .headerWrap .headerInner nav ul li:hover em, #wrap.home.transTop header .headerWrap .headerInner nav ul li:hover em {
   background-color: #fff;
 }
+#wrap.home.blackTop header .headerWrap .headerInner .goTo, #wrap.home.transTop header .headerWrap .headerInner .goTo {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+  border-width: 2.6px;
+}
 #wrap.home.blackTop header {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
 }
 #wrap.home.transTop header {
   background-color: transparent;
+}
+
+#wrap.sub {
+  padding-top: 20rem;
+}
+#wrap.sub #contentWrap {
+  min-height: 130rem;
+  max-width: 1032px;
+  margin: auto;
+  width: 100%;
+}
+
+.itgoWebTab {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #898989;
+}
+.itgoWebTab button {
+  font-size: 2rem;
+  font-weight: 600;
+  height: 7rem;
+  cursor: pointer;
+}
+.itgoWebTab .indicate {
+  position: absolute;
+  height: 0.5rem;
+  background-color: #e5318e;
+  bottom: -1px;
+  left: 0;
+  transition: left 0.5s;
+}
+.itgoWebTab.setTab_1 .indicate {
+  left: 0;
+}
+.itgoWebTab.setTab_1 button:nth-child(1) {
+  color: #e5318e;
+}
+.itgoWebTab.setTab_2 button:nth-child(2) {
+  color: #e5318e;
+}
+.itgoWebTab.setTab_3 button:nth-child(3) {
+  color: #e5318e;
+}
+.itgoWebTab.setTab_4 button:nth-child(4) {
+  color: #e5318e;
+}
+.itgoWebTab.setTab_5 button:nth-child(5) {
+  color: #e5318e;
+}
+.itgoWebTab.setTab_6 button:nth-child(6) {
+  color: #e5318e;
+}
+.itgoWebTab.setTab_7 button:nth-child(7) {
+  color: #e5318e;
+}
+.itgoWebTab.setTab_8 button:nth-child(8) {
+  color: #e5318e;
+}
+.itgoWebTab.setTab_9 button:nth-child(9) {
+  color: #e5318e;
+}
+
+.pageTitle {
+  margin-bottom: 4.3rem;
+}
+.pageTitle strong {
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 2.6rem;
+  padding-left: 10.1rem;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+.pageTitle strong.notice {
+  background-image: url("../images/ic_notice.svg");
 }
 
 #introduction .introduction-main {
@@ -318,39 +404,100 @@ footer .footer-copyright {
   position: absolute;
   flex-direction: column;
 }
-#introduction .introduction-tab .tab-title {
+#introduction .introduction-tab .itgoWebTab {
   width: 100%;
   background-color: #f3f5f6;
-  height: 7rem;
+  border: none;
+}
+#introduction .introduction-tab .itgoWebTab button, #introduction .introduction-tab .itgoWebTab .indicate {
+  width: calc(100% / 3);
+}
+#introduction .introduction-tab .itgoWebTab.setTab_2 .indicate {
+  left: calc((100% / 3) * 1);
+}
+#introduction .introduction-tab .itgoWebTab.setTab_3 .indicate {
+  left: calc((100% / 3) * 2);
+}
+
+.noticeTab .itgoWebTab button, .noticeTab .itgoWebTab .indicate {
+  width: calc(100% / 2);
+}
+.noticeTab .itgoWebTab.setTab_2 .indicate {
+  left: calc((100% / 2) * 1);
+}
+
+.noticeList ul li {
+  border-bottom: 1px solid #e2e2e2;
+}
+.noticeList ul li .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.noticeList ul li .info .list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.3rem 0;
+  height: 2.3rem;
+  width: calc(100% - 70px);
+}
+.noticeList ul li .info .list .type {
+  font-size: 1.4rem;
+  padding-left: 1.6rem;
+  flex-grow: 0;
+}
+.noticeList ul li .info .list .type span {
+  text-align: center;
+  width: 8rem;
+  border: thin solid #e5318e;
+  box-sizing: border-box;
+  display: block;
+  padding: 0.3rem 0;
+  border-radius: 2rem;
+  color: #e5318e;
+}
+.noticeList ul li .info .list .title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-left: 1.3rem;
+  flex-grow: 1;
+}
+.noticeList ul li .info .list .date {
+  color: #aaa;
+  text-align: right;
+  flex-grow: 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.noticeList ul li .info .btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  width: 70px;
 }
-#introduction .introduction-tab .tab-title button {
-  font-size: 2rem;
-  font-weight: 600;
-  width: calc(100% / 3);
-  height: 7rem;
-  cursor: pointer;
+.noticeList ul li .info .btn button {
+  width: 3rem;
+  height: 3rem;
+  background: url("../images/ic_down.svg") no-repeat 50% 50%;
+  background-size: 3rem auto;
 }
-#introduction .introduction-tab .tab-title .indicate {
-  position: absolute;
-  width: calc(100% / 3);
-  height: 0.8rem;
-  background-color: #e5318e;
-  bottom: 0;
-  left: 0;
-  transition: left 0.5s;
+.noticeList ul li .content {
+  min-height: 15.6rem;
+  background-color: #f3f5f6;
+  padding: 2.45rem 10.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-top: 1px solid #e2e2e2;
+  display: none;
 }
-#introduction .introduction-tab .tab-title.setTab_1 .indicate {
-  left: 0;
+.noticeList ul li.open .info .btn {
+  transform: rotate(180deg);
 }
-#introduction .introduction-tab .tab-title.setTab_2 .indicate {
-  left: calc((100% / 3) * 1);
-}
-#introduction .introduction-tab .tab-title.setTab_3 .indicate {
-  left: calc((100% / 3) * 2);
+.noticeList ul li.open .content {
+  display: block;
 }
 
 @media screen and (max-width: 1440px) {
@@ -447,6 +594,77 @@ footer .footer-copyright {
   }
   .introduction-tab .tab-title button {
     height: 6rem;
+  }
+
+  #wrap.sub {
+    padding-top: 9.8rem;
+  }
+  #wrap.sub #contentWrap {
+    min-height: 80vh;
+  }
+
+  .pageTitle {
+    margin: 0 2.3rem 1rem;
+  }
+  .pageTitle strong {
+    height: 4.5rem;
+    padding-left: 5.7rem;
+    font-size: 2rem;
+  }
+
+  .itgoWebTab {
+    height: 5rem;
+  }
+  .itgoWebTab button {
+    font-size: 1.6rem;
+  }
+  .itgoWebTab .indicate {
+    height: 0.3rem;
+  }
+
+  .noticeList ul li .info .list {
+    padding: 1.4rem 0 1.4rem 2rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .noticeList ul li .info .list .type {
+    font-size: 1rem;
+    padding-left: 0;
+    order: 2;
+  }
+  .noticeList ul li .info .list .type span {
+    width: 6rem;
+    padding: 0.3rem;
+  }
+  .noticeList ul li .info .list .title {
+    font-size: 1.6rem;
+    margin: 0 0 0.8rem 0;
+    width: 100%;
+    order: 1;
+  }
+  .noticeList ul li .info .list .date {
+    flex-grow: 1;
+    margin-left: 0.8rem;
+    order: 3;
+    text-align: left;
+    font-size: 1.6rem;
+  }
+  .noticeList ul li .info .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+  }
+  .noticeList ul li .info .btn button {
+    width: 3rem;
+    height: 3rem;
+    background: url("../images/ic_down.svg") no-repeat 50% 50%;
+    background-size: 3rem auto;
+  }
+  .noticeList ul li .content {
+    font-size: 1.4rem;
+    min-height: 12.1rem;
+    padding: 3rem;
   }
 }
 @media screen and (max-width: 768px) {

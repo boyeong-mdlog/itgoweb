@@ -45,7 +45,7 @@ function Home() {
                 </div>
             </div>
             <div className="introduction-tab">
-                <div className={`tab-title setTab_${tabValue}`}>
+                <div className={`itgoWebTab setTab_${tabValue}`}>
                     <button onClick={() =>tabSort(1)}>차주</button>
                     <button onClick={() =>tabSort(2)}>주선사</button>
                     <button onClick={() =>tabSort(3)}>화주</button>
