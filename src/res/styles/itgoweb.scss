@@ -80,7 +80,7 @@ header {
 
 /* Footer */
 footer {
-    background-color: #183256;padding: 6.5rem;
+    background-color: #183256;padding: 6.5rem;display: flex;align-items: center;flex-direction: column;text-align: left;
     .footer-logo {
         text-indent: -999em;background: url("../images/logo_white.svg") no-repeat 50% 50%;background-size: 100% auto;width: 10rem;height: 4rem;margin-bottom: 2.4rem;
     }
