@@ -417,33 +417,33 @@ footer .footer-copyright {
   border: none;
 }
 #introduction .introduction-tab .itgoWebTab button, #introduction .introduction-tab .itgoWebTab .indicate {
-  width: 33.3333333333%;
+  width: calc(100% / 3);
 }
 #introduction .introduction-tab .itgoWebTab.setTab_2 .indicate {
-  left: 33.3333333333%;
+  left: calc((100% / 3) * 1);
 }
 #introduction .introduction-tab .itgoWebTab.setTab_3 .indicate {
-  left: 66.6666666667%;
+  left: calc((100% / 3) * 2);
 }
 
 .noticeTab .itgoWebTab button, .noticeTab .itgoWebTab .indicate {
-  width: 50%;
+  width: calc(100% / 2);
 }
 .noticeTab .itgoWebTab.setTab_2 .indicate {
-  left: 50%;
+  left: calc((100% / 2) * 1);
 }
 
 .qnaTab .itgoWebTab button, .qnaTab .itgoWebTab .indicate {
-  width: 25%;
+  width: calc(100% / 4);
 }
 .qnaTab .itgoWebTab.setTab_2 .indicate {
-  left: 25%;
+  left: calc((100% / 4) * 1);
 }
 .qnaTab .itgoWebTab.setTab_3 .indicate {
-  left: 50%;
+  left: calc((100% / 4) * 2);
 }
 .qnaTab .itgoWebTab.setTab_4 .indicate {
-  left: 75%;
+  left: calc((100% / 4) * 3);
 }
 
 .subTab {
@@ -705,39 +705,49 @@ footer .footer-copyright {
   #terms {
     height: auto;
   }
+
   #terms span {
     font-weight: 700 !important;
     font-size: 1.6rem !important;
   }
+
   #terms .terms-title {
     padding: 0 0 1.15rem 0;
     margin-bottom: 3.05rem;
   }
+
   #terms .terms-title > h2 {
     font-size: 1.8rem;
   }
+
   #terms .terms-inner {
     padding: 0;
     background: inherit;
   }
+
   #terms .terms-inner .terms-info {
     margin-top: 3.5rem;
   }
+
   #terms .terms-inner .terms-info:first-child {
     margin-top: 0;
     padding-top: 0;
   }
+
   #terms .terms-inner .terms-info .terms-info-title {
     font-size: 1.6rem;
   }
+
   #terms .terms-inner .terms-info .terms-info-title h2 {
     font-size: 1.6rem;
   }
+
   #terms .terms-inner .terms-info .terms-info-content {
     font-size: 1.4rem;
     line-height: 20px;
     margin-top: 1.6rem;
   }
+
   #terms .terms-inner .terms-info .terms-info-content p {
     font-size: 1.4rem;
   }
@@ -747,18 +757,22 @@ footer .footer-copyright {
     flex-direction: column-reverse;
     align-items: flex-start;
   }
+
   #terms .terms-title .terms-select {
     margin-bottom: 4rem;
   }
+
   #terms .terms-inner .terms-info .terms-info-content .table-container {
     overflow-x: scroll;
   }
+
   #terms .terms-inner .terms-info .terms-info-content .table-container table {
     min-width: 60rem;
   }
+
   #terms .terms-inner .terms-info .terms-info-content table,
-  #terms .terms-inner .terms-info .terms-info-content th,
-  #terms .terms-inner .terms-info .terms-info-content td {
+#terms .terms-inner .terms-info .terms-info-content th,
+#terms .terms-inner .terms-info .terms-info-content td {
     padding: 0.8rem;
   }
 }
@@ -850,24 +864,28 @@ footer .footer-copyright {
   header .headerWrap .headerInner.open .responseBg {
     display: block;
   }
+
   footer {
     padding: 9.8rem 5.3rem 5.3rem;
   }
   footer .footer-term ul {
     width: 92%;
   }
+
   .introduction-tab .tab-title {
     height: 6rem;
   }
   .introduction-tab .tab-title button {
     height: 6rem;
   }
+
   #wrap.sub {
     padding-top: 9.8rem;
   }
   #wrap.sub #contentWrap {
     min-height: 80vh;
   }
+
   .pageTitle {
     margin: 0 2.3rem 1rem;
   }
@@ -876,6 +894,7 @@ footer .footer-copyright {
     padding-left: 5.7rem;
     font-size: 2rem;
   }
+
   .itgoWebTab {
     height: 5rem;
   }
@@ -885,6 +904,7 @@ footer .footer-copyright {
   .itgoWebTab .indicate {
     height: 0.3rem;
   }
+
   .boardList ul li .info .list {
     padding: 1.4rem 0 1.4rem 2rem;
     height: auto;
@@ -936,6 +956,7 @@ footer .footer-copyright {
   .boardList ul li .content > div.A {
     margin-left: 0;
   }
+
   .subTab {
     margin: 2.7rem 0 2.7rem 1.3rem;
     gap: 0.7rem;
