@@ -52,7 +52,7 @@ function Home() {
                     <div className="indicate"></div>
                 </div>
             </div>
-            <div style={{height: "3000px"}}></div>
+            <div></div>
         </div>
 
     );

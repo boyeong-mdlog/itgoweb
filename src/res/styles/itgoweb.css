@@ -118,6 +118,10 @@ header .headerWrap .headerInner h1 {
   cursor: pointer;
   background-size: 100% auto;
 }
+header .headerWrap .headerInner h1 a {
+  display: block;
+  height: calc(100% - 0px);
+}
 header .headerWrap .headerInner nav {
   position: relative;
 }
@@ -170,8 +174,11 @@ header .headerWrap .headerInner nav ul li p {
 header .headerWrap .headerInner nav ul li p a {
   font-size: 2rem;
   font-weight: 500;
-  padding: 2rem 2rem 2rem 0;
+  padding: 2rem;
   white-space: nowrap;
+}
+header .headerWrap .headerInner nav ul li p a:first-child {
+  padding-left: 0;
 }
 header .headerWrap .headerInner nav ul li:hover em {
   width: 100%;
@@ -261,6 +268,9 @@ footer .footer-term ul li {
   border-right: 1px solid rgba(255, 255, 255, 0.5);
   padding: 0 0.8rem;
   margin-top: 1.95rem;
+}
+footer .footer-term ul li b {
+  color: #fff;
 }
 footer .footer-term ul li:first-child {
   padding-left: 0;
@@ -577,13 +587,15 @@ footer .footer-copyright {
   font-weight: 700;
 }
 #terms .terms-title .terms-select {
-  width: 32rem;
+  width: 100%;
+  max-width: 32rem;
   height: 4.4rem;
   padding: 0 0.7rem 0 1.5rem;
   border: 1px solid #e2e2e2;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
   justify-content: space-between;
   position: relative;
   z-index: 1;
@@ -636,28 +648,92 @@ footer .footer-copyright {
   list-style: lower-alpha;
 }
 
+#terms {
+  min-height: inherit;
+  padding: 1.5rem;
+}
+#terms span {
+  font-weight: 700 !important;
+  font-size: 1.8rem !important;
+}
+#terms .terms-title {
+  margin-bottom: 1.7rem;
+  padding: 0 0 1rem 0.3rem;
+  border-bottom: thin solid #898989;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#terms .terms-title > h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+#terms .terms-title .terms-select {
+  width: 100%;
+  max-width: 32rem !important;
+  height: 4.4rem;
+  padding: 0 0.7rem 0 1.5rem !important;
+  border: 1px solid #e2e2e2 !important;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+#terms .terms-title .terms-select span {
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
+  color: #585858 !important;
+  pointer-events: none;
+}
+#terms .terms-title .terms-select .terms-date-selcet-option {
+  width: 100%;
+  max-width: 32rem !important;
+  background: white;
+  border: 1px solid #e2e2e2 !important;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 4.4rem;
+  left: 0;
+}
+#terms .terms-title .terms-select .terms-date-selcet-option .date-option-info {
+  font-size: 1.4rem !important;
+  font-weight: 500 !important;
+  color: #585858 !important;
+  padding: 1rem 1.5rem;
+}
+#terms .terms-title .terms-select .terms-date-selcet-option .date-option-info:hover {
+  background: #f1f1f1;
+  transition: all 0.3s;
+}
+#terms option {
+  padding-right: 3rem !important;
+  min-height: 2rem !important;
+}
+#terms .terms-inner {
+  padding: 6rem 3.5rem;
+  background: #fafafa;
+}
 #terms .terms-inner .terms-info {
   padding: 0 1rem;
   margin-top: 7rem;
 }
-
 #terms .terms-inner .terms-info:first-child {
   margin-top: 0;
   padding: 0rem 1rem;
 }
-
 #terms .terms-inner .terms-info .terms-info-title {
   font-size: 1.8rem;
   font-weight: 700;
   color: #101010;
 }
-
 #terms .terms-inner .terms-info .terms-info-title h2 {
   font-size: 1.8rem;
   font-weight: 700;
   color: #101010;
 }
-
 #terms .terms-inner .terms-info .terms-info-content {
   font-size: 1.6rem;
   font-weight: 400;
@@ -665,34 +741,27 @@ footer .footer-copyright {
   line-height: 22px;
   margin-top: 2.4rem;
 }
-
 #terms .terms-inner .terms-info .terms-info-content p {
   font-size: 1.6rem;
   font-weight: 400;
   color: #101010;
 }
-
 #terms .terms-inner .terms-info .terms-info-content ol {
   padding-inline-start: 20px;
   margin-top: 1rem;
 }
-
 #terms .terms-inner .terms-info .terms-info-content ol ul {
   padding-inline-start: 20px;
 }
-
 #terms .terms-inner .terms-info .terms-info-content ol li {
   margin-top: 0.5rem;
 }
-
 #terms .terms-inner .terms-info .terms-info-content ol li:last-child {
   margin-bottom: 1rem;
 }
-
 #terms .terms-inner .terms-info .terms-info-content ul {
   padding-inline-start: 20px;
 }
-
 #terms .terms-inner .terms-info .terms-info-content table,
 #terms .terms-inner .terms-info .terms-info-content th,
 #terms .terms-inner .terms-info .terms-info-content td {
@@ -762,6 +831,30 @@ footer .footer-copyright {
     padding: 0.8rem;
   }
 }
+@keyframes rotate-down {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotate-up {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.rotate-down {
+  animation: rotate-down 0.3s forwards;
+}
+
+.rotate-up {
+  animation: rotate-up 0.3s forwards;
+}
+
 .mt-3r {
   margin-top: 3rem;
 }

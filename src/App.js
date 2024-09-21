@@ -5,6 +5,8 @@ import Home from "./Pages/Home"
 import Notice from "./Pages/Notice";
 import Question from "./Pages/Question";
 import ItgoTerm from "./Pages/ItgoTerm";
+import PrivacyTerm from "./Pages/PrivacyTerm";
+import LocationTerm from "./Pages/LocationTerm";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
               <Route path="/Notice" element={<Notice />}/>
               <Route path="/Question" element={<Question />}/>
               <Route path="/itgoTerm" element={<ItgoTerm />} />
+              <Route path="/privacyPolicyTerm" element={<PrivacyTerm />} />
+              <Route path="/locationTerm" element={<LocationTerm />} />
           </Routes>
       </Layout>
   );

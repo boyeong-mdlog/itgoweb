@@ -27,7 +27,7 @@ function Header() {
             <header>
                 <div className={`headerWrap ${headerOver}`}>
                     <div className={`headerInner ${menu}`}>
-                        <h1>화물잇고</h1>
+                        <h1><Link to="/">화물잇고</Link></h1>
                         <nav>
                             <div className="responseBar" onClick={openMenu}>
                                 <span className="bar"></span>

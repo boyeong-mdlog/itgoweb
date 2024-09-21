@@ -18,7 +18,7 @@ function Footer() {
                             <li>서울특별시 용산구 한강대로32</li>
                             <li>대표이사 황현식</li>
                             <li><Link to="/itgoTerm">이용약관</Link></li>
-                            <li><Link to="/privacyPolicyTerm">개인정보처리방침</Link></li>
+                            <li><Link to="/privacyPolicyTerm"><b>개인정보처리방침</b></Link></li>
                             <li><Link to="/locationTerm">위치기반서비스약관 </Link></li>
                             <li>Fax : 0503-8379-8505</li>
                             <li>email : cs@itgo.ai</li>
