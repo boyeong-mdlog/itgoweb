@@ -1,18 +1,74 @@
-import React, {useState, useLayoutEffect, useRef} from "react";
+import React, {useState, useLayoutEffect, useRef, useEffect} from "react";
+import {useSearchParams} from "react-router-dom";
 import oneVideo from "../res/images/video_1.mp4";
 import twoVideo from "../res/images/video_2.mp4";
+import {MainSvgOne, MainSvgTwo, MainSvgThree} from "../components/svg/MainSvg";
+import HomeTabContent from "./HomeTabContent";
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
+let vidx = 0;
+let midx = 0;
+
+const videoSource = [
+    {
+        source : oneVideo,
+        duration : 10000,
+    },
+    {
+        source: twoVideo,
+        duration: 15000,
+    }
+]
+
+const topMainContent= [
+    {
+        type: 'video',
+        source: videoSource[vidx],
+        title: '화물을 넘어, 사람과 사람을 이어주는',
+        subtitle: '혁신적인 디지털 주선 업무와 맞춤형 스마트 배차 플랫폼',
+        duration: videoSource[vidx],
+    },
+    {
+        type: 'svg',
+        component: MainSvgOne,
+        title: '차주님에게 필요한',
+        subtitle: '여러 화물도 한 번에',
+        duration: 5000,
+    },
+    {
+        type: 'svg',
+        component: MainSvgTwo,
+        title: '화물 등록에서 배차, 운임료 지급까지',
+        subtitle: '간편 화물 주선 토탈 관리',
+        duration: 5000,
+    },
+    {
+        type: 'svg',
+        component: MainSvgThree,
+        title: '전화는 그만',
+        subtitle: '앱에서 보는 실시간 화물 트래킹',
+        duration: 5000,
+    },
+]
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+const MainInit = () => {
+    return (
+        <></>
+    )
+}
+
+function updateContent() {
+    midx++;
+    if(midx > topMainContent.length) {midx = 0;}
+    vidx++;
+    if(vidx === 3) {vidx =0;}
+}
 function Home() {
-    const [tabValue, setTabValue] = useState("1")
-    const tabSort = (idx) =>{
-        setTabValue(idx);
-    }
+
 
     let scrollTop;
     window.addEventListener(
@@ -38,56 +94,17 @@ function Home() {
         { passive: true }
     );
 
-    const main = useRef();
-
-    useGSAP(
-        () => {
-            const boxes = gsap.utils.toArray('.box');
-            boxes.forEach((box) => {
-                gsap.to(box, {
-                    x: 150,
-                    scrollTrigger: {
-                        trigger: box,
-                        start: 'bottom bottom',
-                        end: 'top 20%',
-                        scrub: true,
-                        // markers: true,
-                    },
-                });
-            });
-        },
-        { scope: main }
-    );
-
 
     return (
         <div id="introduction">
             <div className="introduction-main">
                 <div className="introduction-media">
-                    <video autoPlay={true} muted={true} playsInline={true} preload="true" loop={true}>
-                        <source src={oneVideo} type="video/mp4"/>
-                    </video>
+                    <MainInit />
                 </div>
                 <div className="introduction-main-text">
-                    <div>
-                    </div>
                 </div>
             </div>
-            <div className="introduction-tab">
-                <div className={`itgoWebTab setTab_${tabValue}`}>
-                    <button onClick={() =>tabSort(1)}>차주</button>
-                    <button onClick={() =>tabSort(2)}>주선사</button>
-                    <button onClick={() =>tabSort(3)}>화주</button>
-                    <div className="indicate"></div>
-                </div>
-            </div>
-            <div>
-                <div ref={main}>
-                    <div className="box">Box</div>
-                    <div className="box">Box</div>
-                    <div className="box">Box</div>
-                </div>
-            </div>
+            <HomeTabContent />
         </div>
 
     );

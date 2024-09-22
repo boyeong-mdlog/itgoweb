@@ -1072,3 +1072,161 @@ footer .footer-copyright {
     opacity: 1;
   }
 }
+.second_driver_phone_front,
+.second_driver_phone_front_road,
+.second_driver_phone_front_truck,
+.second_driver_phone_front_camera,
+.second_driver_phone_front_tone,
+.second_driver_phone_front_height,
+.second_driver_phone_front_info_one,
+.second_driver_phone_front_info_two,
+.second_driver_phone_front_info_three {
+  opacity: 0;
+}
+
+.first_shipper_phone_middle,
+#first_shipper_phone_middle_road,
+.first_shipper_phone_middle_chapter_three,
+.first_shipper_phone_middle_chapter_two,
+.first_shipper_phone_middle_chapter_one,
+.first_shipper_phone_middle_truck,
+.first_shipper_phone_middle_truck_info {
+  opacity: 0;
+}
+
+.second_shipper_card_one,
+.second_shipper_card_two,
+.second_shipper_card_three,
+.second_shipper_card_four,
+.second_shipper_card_five {
+  opacity: 0;
+}
+
+.introduction-tab-inner {
+  width: 100%;
+  padding: 12rem 0 5rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.introduction-tab-inner .tab-contents {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  margin-bottom: 8.5rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.introduction-tab-inner .tab-contents .tab-contents-text {
+  width: 33%;
+}
+.introduction-tab-inner .tab-contents .tab-contents-text svg {
+  margin-bottom: 3.5rem;
+}
+.introduction-tab-inner .tab-contents .tab-contents-text h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.introduction-tab-inner .tab-contents .tab-contents-text p {
+  font-size: 2rem;
+  color: #959595;
+  word-break: keep-all;
+  line-height: 150%;
+}
+.introduction-tab-inner .tab-contents .tab-motion {
+  display: flex;
+  justify-content: center;
+  max-width: 65%;
+}
+.introduction-tab-inner .tab-contents .tab-motion > svg {
+  height: auto;
+}
+.introduction-tab-inner .tab-contents:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1024px) {
+  .introduction-tab .tab-title {
+    height: 6rem;
+  }
+  .introduction-tab .tab-title button {
+    height: 6rem;
+  }
+  .introduction-tab .tab-title .active-tab::before {
+    height: 0.7rem;
+  }
+  .introduction-tab-inner {
+    padding-top: 16rem;
+  }
+  .introduction-tab-inner .tab-contents {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .introduction-tab .tab-title {
+    height: 5rem;
+    top: 60rem;
+  }
+  .introduction-tab .tab-title button {
+    font-size: 1.8rem;
+    font-weight: 500;
+    width: 25.6rem;
+    height: 5rem;
+  }
+  .introduction-tab .tab-title .active-tab::before {
+    height: 0.6rem;
+  }
+  .introduction-tab-inner {
+    padding-top: 12rem;
+  }
+  .introduction-tab-inner .tab-contents {
+    margin-bottom: 5.5rem;
+    display: block;
+    justify-content: center;
+  }
+  .introduction-tab-inner .tab-contents .tab-contents-text {
+    width: 100%;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .introduction-tab-inner .tab-contents .tab-contents-text h2 {
+    font-size: 3.6rem;
+    text-align: center;
+  }
+  .introduction-tab-inner .tab-contents .tab-contents-text p {
+    text-align: center;
+    width: 70%;
+  }
+  .introduction-tab-inner .tab-contents .tab-motion {
+    max-width: 100%;
+  }
+}
+@media (max-width: 360px) {
+  .introduction-tab-inner {
+    padding: 7rem 0 0 0;
+  }
+  .introduction-tab-inner .tab-contents {
+    max-width: 320px;
+    margin-bottom: 0;
+    flex-direction: column;
+  }
+  .introduction-tab-inner .tab-contents .tab-contents-text > svg {
+    width: 6.2rem;
+    height: 6.2rem;
+  }
+  .introduction-tab-inner .tab-contents .tab-contents-text h2 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
+  }
+  .introduction-tab-inner .tab-contents .tab-contents-text p {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}

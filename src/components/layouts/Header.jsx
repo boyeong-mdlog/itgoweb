@@ -42,9 +42,9 @@ function Header() {
                                     <Link to="/">서비스 소개</Link>
                                     <em></em>
                                     <p>
-                                        <Link to="#">차주</Link>
-                                        <Link to="#">주선사</Link>
-                                        <Link to="#">화주</Link>
+                                        <Link to="/?subTitle=intro-driver">차주</Link>
+                                        <Link to="/?subTitle=intro-broker">주선사</Link>
+                                        <Link to="/?subTitle=intro-caller">화주</Link>
                                     </p>
                                 </li>
                                 <li onMouseEnter={()=>handleHeaderOn(2)} onMouseLeave={handleHeaderOut}>
