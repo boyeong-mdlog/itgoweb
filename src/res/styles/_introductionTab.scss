@@ -36,6 +36,8 @@ $lh-150: 150%;
 $ls-0: 0%;
 
 $grey-01: #959595;
+$blue-gray-10: #f3f5f6;
+$white: #ffffff;
 
 .introduction-tab-inner {
   width: 100%;
@@ -218,6 +220,185 @@ $grey-01: #959595;
 
       .tab-motion {
         > svg {
+        }
+      }
+    }
+  }
+}
+
+
+
+/***** Introduction *****/
+#introduction {
+  .introduction-main {
+    width: 100%;
+    height: 90rem;
+    background: $blue-gray-10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .introduction-media {
+      width: 100%;
+      height: 90rem;
+
+      video {
+        width: 100%;
+        height: 90rem;
+        object-fit: cover;
+      }
+
+      svg {
+        width: 100%;
+        height: 90rem;
+      }
+    }
+
+    .introduction-main-text {
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+
+      .main-logo {
+        margin-bottom: 3.9rem;
+      }
+
+      .main-video-title {
+        font-size: $fz-26;
+        font-weight: $fw-500;
+        color: $white;
+        margin-bottom: 2.4rem;
+      }
+
+      .main-video-subtitle {
+        font-size: $fz-34;
+        font-weight: $fw-500;
+        color: $white;
+      }
+
+      .main-svg-title {
+        font-size: $fz-40;
+        font-weight: $fw-500;
+        color: $white;
+      }
+
+      .main-svg-subtitle {
+        font-size: $fz-70;
+        font-weight: $fw-700;
+        color: $white;
+      }
+    }
+  }
+}
+
+.download-link {
+  width: 100%;
+  padding: 15rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    margin: 0 2.5rem;
+    cursor: pointer !important;
+  }
+}
+
+// ————————————————————————————————————
+//* ——— 768px
+// ————————————————————————————————————
+@media (max-width: 768px) {
+  #introduction {
+    .introduction-main {
+      height: 60rem;
+
+      .introduction-media {
+        height: 60rem;
+
+        video {
+          height: 60rem;
+        }
+
+        svg {
+          height: 60rem;
+        }
+      }
+
+      .introduction-main-text {
+        padding: 0 5rem;
+
+        .main-logo {
+          margin-bottom: 2.2rem;
+
+          > svg {
+            width: 24.7rem;
+            height: 9.7rem;
+          }
+        }
+
+        .main-video-title {
+          font-size: $fz-18;
+          font-weight: $fw-400;
+          margin-bottom: 1.7rem;
+        }
+
+        .main-video-subtitle {
+          font-size: $fz-22;
+          font-weight: $fw-400;
+          text-align: center;
+        }
+
+        .main-svg-title {
+          font-size: $fz-24;
+          margin-bottom: 0.5rem;
+        }
+
+        .main-svg-subtitle {
+          font-size: $fz-38;
+        }
+      }
+    }
+  }
+
+  .download-link {
+    padding: 10rem 0 16.2rem 0;
+    flex-direction: column;
+
+    a {
+      &:nth-child(2) {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+// ————————————————————————————————————
+//* ——— 360px
+// ————————————————————————————————————
+@media (max-width: 360px) {
+  #introduction {
+    .introduction-main {
+      .introduction-main-text {
+        .main-subtitle {
+          padding: 0 15%;
+        }
+      }
+    }
+  }
+
+  .download-link {
+    padding-bottom: 10.7rem;
+    flex-shrink: 0;
+
+    > a {
+      > div {
+        > svg {
+          width: 28rem;
+          height: 8rem;
         }
       }
     }

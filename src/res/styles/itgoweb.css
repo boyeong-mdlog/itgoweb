@@ -1239,3 +1239,134 @@ footer .footer-copyright {
     padding: 0 1rem;
   }
 }
+/***** Introduction *****/
+#introduction .introduction-main {
+  width: 100%;
+  height: 90rem;
+  background: #f3f5f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#introduction .introduction-main .introduction-media {
+  width: 100%;
+  height: 90rem;
+}
+#introduction .introduction-main .introduction-media video {
+  width: 100%;
+  height: 90rem;
+  object-fit: cover;
+}
+#introduction .introduction-main .introduction-media svg {
+  width: 100%;
+  height: 90rem;
+}
+#introduction .introduction-main .introduction-main-text {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+#introduction .introduction-main .introduction-main-text .main-logo {
+  margin-bottom: 3.9rem;
+}
+#introduction .introduction-main .introduction-main-text .main-video-title {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 2.4rem;
+}
+#introduction .introduction-main .introduction-main-text .main-video-subtitle {
+  font-size: 3.4rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+#introduction .introduction-main .introduction-main-text .main-svg-title {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+#introduction .introduction-main .introduction-main-text .main-svg-subtitle {
+  font-size: 7rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.download-link {
+  width: 100%;
+  padding: 15rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.download-link a {
+  margin: 0 2.5rem;
+  cursor: pointer !important;
+}
+
+@media (max-width: 768px) {
+  #introduction .introduction-main {
+    height: 60rem;
+  }
+  #introduction .introduction-main .introduction-media {
+    height: 60rem;
+  }
+  #introduction .introduction-main .introduction-media video {
+    height: 60rem;
+  }
+  #introduction .introduction-main .introduction-media svg {
+    height: 60rem;
+  }
+  #introduction .introduction-main .introduction-main-text {
+    padding: 0 5rem;
+  }
+  #introduction .introduction-main .introduction-main-text .main-logo {
+    margin-bottom: 2.2rem;
+  }
+  #introduction .introduction-main .introduction-main-text .main-logo > svg {
+    width: 24.7rem;
+    height: 9.7rem;
+  }
+  #introduction .introduction-main .introduction-main-text .main-video-title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.7rem;
+  }
+  #introduction .introduction-main .introduction-main-text .main-video-subtitle {
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  #introduction .introduction-main .introduction-main-text .main-svg-title {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+  }
+  #introduction .introduction-main .introduction-main-text .main-svg-subtitle {
+    font-size: 3.8rem;
+  }
+
+  .download-link {
+    padding: 10rem 0 16.2rem 0;
+    flex-direction: column;
+  }
+  .download-link a:nth-child(2) {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 360px) {
+  #introduction .introduction-main .introduction-main-text .main-subtitle {
+    padding: 0 15%;
+  }
+
+  .download-link {
+    padding-bottom: 10.7rem;
+    flex-shrink: 0;
+  }
+  .download-link > a > div > svg {
+    width: 28rem;
+    height: 8rem;
+  }
+}
