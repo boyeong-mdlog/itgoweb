@@ -1,7 +1,6 @@
 import React, {useRef} from "react";
 import {FirstIcon, FirstContent,SecondIcon,SecondCont,ThirdIcon,ThirdCont} from "../components/svg/DriverSvg";
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
 const tabContents = [
@@ -32,6 +31,7 @@ function HomeDriverContent() {
     const tabcont = useRef();
     useGSAP(
         () =>{
+            //첫번째
             gsap.from('.tab-contents:nth-child(1) .tab-contents-text svg', {
                 scrollTrigger: {
                     trigger: '.tab-contents:nth-child(1) .tab-contents-text',
@@ -114,7 +114,7 @@ function HomeDriverContent() {
                 opacity: 0.2,
             })
 
-
+            //두번째
             gsap.from('.tab-contents:nth-child(2) .tab-contents-text > svg', {
                 scrollTrigger: {
                     trigger: '.tab-contents:nth-child(2) .tab-contents-text',
@@ -392,6 +392,7 @@ function HomeDriverContent() {
                 y: 5,
             })
 
+            //세번째
             gsap.from('.tab-contents:nth-child(3) .tab-contents-text > svg', {
                 scrollTrigger: {
                     trigger: '.tab-contents:nth-child(3) .tab-contents-text',
