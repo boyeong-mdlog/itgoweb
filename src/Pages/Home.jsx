@@ -5,11 +5,12 @@ import {MainSvgOne, MainSvgTwo, MainSvgThree, MainLogo} from "../components/svg/
 import HomeTabContent from "./HomeTabContent";
 
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-gsap.registerPlugin(useGSAP);
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 let vidx = 0;
-
 const videoSource = [
     {
         source : oneVideo,
@@ -87,6 +88,23 @@ function Home() {
     const mainMedia = useRef();
     const mainText = useRef();
 
+
+    useEffect(()=>{
+        const updateTop = setTimeout(()=>{
+            setCurrentIndex(currentIndex >= contents.length - 1 ? 0 : currentIndex+1);
+            UpdateContent();
+        },contents[currentIndex].duration);
+        return () => clearTimeout(updateTop);
+
+    },[currentIndex]);
+
+    const UpdateContent = () => {
+        if(contents[currentIndex].type === "video") {
+            vidx === 1 ? vidx = 0 : vidx = 1;
+            contents[currentIndex].component = videoSource[vidx].source;
+            contents[currentIndex].duration = videoSource[vidx].duration;
+        }
+    }
     useGSAP(
         () =>{
             gsap.from('.main-video-title', {
@@ -176,47 +194,8 @@ function Home() {
                 y: -10,
                 scale: 1.1,
             })
-
-        },{scope: mainMedia}
-    );
-
-    useGSAP(
-        ()=>{
-            gsap.from('.main-svg-title', {
-                scrollTrigger: {
-                    trigger: '.introduction-main',
-                    once: true,
-                    markers: false,
-                },
-                ease: 'power2.in',
-                duration: 0.5,
-                opacity: 0,
-                scale: 1.1,
-            })
-            gsap.from('.main-svg-subtitle', {
-                scrollTrigger: {
-                    trigger: '.introduction-main',
-                    once: true,
-                    markers: false,
-                },
-                ease: 'power2.in',
-                delay: 1,
-                duration: 0.3,
-                opacity: 0,
-                scale: 1.02,
-            })
         },{scope: mainText}
     );
-
-
-
-    useEffect(()=>{
-
-    });
-
-    const UpdateContent = () => {
-        setCurrentIndex(currentIndex > contents.length - 1 ? 0 : currentIndex+1);
-    }
 
 
 
@@ -260,7 +239,7 @@ function Home() {
                     ): null}
                 </div>
             </div>
-           {/* <HomeTabContent/>*/}
+            <HomeTabContent/>
         </div>
 
     );

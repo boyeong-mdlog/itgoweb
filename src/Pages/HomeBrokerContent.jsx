@@ -1,8 +1,10 @@
 import React, {useRef} from "react";
 import {FirstIcon, FirstContent,SecondIcon,SecondContent,ThirdIcon,ThirdContent} from "../components/svg/BrokerSvg";
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const tabContents = [
     {
@@ -295,9 +297,9 @@ function HomeBrokerContent() {
             <div className="introduction-tab-inner" ref={tabcont}>
                 {tabContents.map((value,index)=>{
                     return (
-                        <div className="tab-contents">
+                        <div className="tab-contents" key={index}>
                             <div className="tab-contents-text">
-                                <div>{tabContents[index].icon}</div>
+                                {tabContents[index].icon}
                                 <h2>{tabContents[index].title}</h2>
                                 <p>{tabContents[index].description}</p>
                             </div>
